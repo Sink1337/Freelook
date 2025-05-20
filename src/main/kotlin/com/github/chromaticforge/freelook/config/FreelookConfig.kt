@@ -24,7 +24,7 @@ object FreelookConfig : Config(
 
     // General
 
-    @Info(text = "Freelook functionality is disabled on Hypixel!", type = InfoType.INFO, size = 2)
+    @Info(text = "Freelook has already been unlocked in hypixel.", type = InfoType.INFO, size = 2)
     var hypixelWarning = false
 
     @Dropdown(name = "Perspective", options = ["First", "Third", "Reverse"])
@@ -59,11 +59,6 @@ object FreelookConfig : Config(
         initialize()
 
         registerKeyBind(keyBind) { if (mode == 1) FreelookHook.togglePerspective() }
-
-        hideIf("hypixelWarning") { !HypixelUtils.INSTANCE.isHypixel }
-        hideIf("invertPitch") { snaplook || HypixelUtils.INSTANCE.isHypixel }
-        hideIf("lockPitch") { snaplook || HypixelUtils.INSTANCE.isHypixel }
-        hideIf("invertYaw") { snaplook || HypixelUtils.INSTANCE.isHypixel }
 
         addDependency("invertPitch", "pitch")
         addDependency("lockPitch", "pitch")
