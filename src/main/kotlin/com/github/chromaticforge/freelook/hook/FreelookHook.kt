@@ -47,7 +47,7 @@ object FreelookHook {
         if (mc.inGameHasFocus) {
             if (!perspectiveToggled) return true
 
-            if (HypixelUtils.INSTANCE.isHypixel || FreelookConfig.snaplook) {
+            if (FreelookConfig.snaplook) {
                 cameraYaw = mc.thePlayer.rotationYaw
                 cameraPitch = mc.thePlayer.rotationPitch
                 return true
